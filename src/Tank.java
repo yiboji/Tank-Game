@@ -1,5 +1,4 @@
 package TankGame2_0;
-
 import java.util.Vector;
 
 class Tank
@@ -39,7 +38,6 @@ class Tank
 		t.start();
 		
 	}
-	
 	
 	public int getColor() {
 		return color;

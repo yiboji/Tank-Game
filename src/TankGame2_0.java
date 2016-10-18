@@ -6,13 +6,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.net.URL;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import com.sun.net.ssl.SSLContext;
-
 import java.util.*;
+
 public class TankGame2_0 extends JFrame implements ActionListener{
 
 	MyPanel mp = null;
@@ -24,11 +22,6 @@ public class TankGame2_0 extends JFrame implements ActionListener{
 	}
 	public TankGame2_0()
 	{
-//		mp = new MyPanel();
-//		Thread t = new Thread(mp);
-//		t.start();
-//		this.add(mp);
-//		this.addKeyListener(mp);
 		msp = new MyStartPanel();
 		Thread tmsp = new Thread(msp);
 		tmsp.start();
@@ -125,11 +118,6 @@ public class TankGame2_0 extends JFrame implements ActionListener{
 			this.addKeyListener(mp);
 			this.setVisible(true);
 		}
-//		else if(e.getActionCommand().equals("close"));
-//		{
-//			System.exit(-1);
-//		}
-		
 	}
 }
 
@@ -163,10 +151,7 @@ class MyStartPanel extends JPanel implements Runnable
 			}
 
 			this.repaint();
-			}
-			
-		
-		
+			}	
 	}
 }
 
@@ -215,10 +200,6 @@ class MyPanel extends JPanel implements KeyListener,Runnable
 		{
 			this.drawTank(hero.getX(), hero.getY(), g, hero.getDirect(), 0);
 		}
-//		else if(hero.isLive==false)
-//		{
-//			g.drawImage(image4, 800, 600, this);
-//		}
 
 		for(int i=0; i<bombs.size();i++)
 		{
@@ -242,10 +223,6 @@ class MyPanel extends JPanel implements KeyListener,Runnable
 			{
 				this.drawTank(ets.get(i).getX(), ets.get(i).getY(), g, ets.get(i).getDirect(), ets.get(i).getColor());	
 			}
-//			else
-//			{
-//				ets.remove(et);
-//			}
 			for(int j=0; j<et.ss.size(); j++)
 			{
 				Shot etShot = et.ss.get(j);
@@ -383,11 +360,6 @@ class MyPanel extends JPanel implements KeyListener,Runnable
 
 	}
 	@Override
-	public void keyTyped(KeyEvent e) {
-		
-		
-	}
-	@Override
 	public void keyPressed(KeyEvent e) 
 	{
 		if(e.getKeyCode() == KeyEvent.VK_UP)
@@ -420,8 +392,6 @@ class MyPanel extends JPanel implements KeyListener,Runnable
 				this.hero.shotEnemy();
 		}
 		
-	}
-	public void keyReleased(KeyEvent e) {
 	}
 	public boolean enermyAllDie(EnemyTank et)
 	{
@@ -472,7 +442,7 @@ class MyPanel extends JPanel implements KeyListener,Runnable
 			this.repaint();
 			if(hero.isLive==false)
 			{
-//				break;
+				break;
 			}
 		}
 	}
